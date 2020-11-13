@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Location.Edit.EditVehicleChargesLocationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/editTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/changeTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textStyle="bold"
+        android:padding="2dp"
+        android:textSize="22sp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/toolbar"/>
+
+    <TextView
+        android:id="@+id/currentTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="2dp"
+        android:textSize="18sp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/changeTV"/>
+
+    <TextView
+        android:id="@+id/newTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="2dp"
+        android:text="Select Location Charge Type "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/currentTV"/>
+
+    <Spinner
+        android:id="@+id/chargeTypeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_below="@id/newTV"
+        android:padding="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+
+    <View android:id="@+id/strut"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/fixHourTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="2dp"
+        android:text="Set fix hour"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:layout_alignEnd="@id/strut"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/chargeTypeSpinner"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/fixHourChargesTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="2dp"
+        android:text="Set fix hour charges"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="24dp"
+        android:layout_alignStart="@id/strut"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/chargeTypeSpinner"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/fixHourET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:inputType="number"
+        android:background="@drawable/btn_shape_light"
+        android:padding="10dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/fixHourChargesTV"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@id/strut"
+        android:visibility="gone"/>
+
+    <com.bachors.prefixinput.EditText
+        android:id="@+id/fixHourChargesET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/btn_shape_light"
+        android:padding="10dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/fixHourChargesTV"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@id/strut"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/chargesOptionTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="2dp"
+        android:text="Select charges option"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_alignEnd="@id/strut"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/fixHourET"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/chargesTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:padding="2dp"
+        android:text="Set charges"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_alignStart="@id/strut"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/fixHourET"
+        android:visibility="gone"/>
+
+    <Spinner
+        android:id="@+id/chargesOptionSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="10dp"
+        android:padding="8dp"
+        android:layout_below="@id/chargesOptionTV"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@id/strut"
+        android:visibility="gone"/>
+
+    <com.bachors.prefixinput.EditText
+        android:id="@+id/chargesOptionRateET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/btn_shape_light"
+        android:padding="10dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/chargesOptionTV"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@id/strut"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Save Changes"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/roboto"
+        android:background="@drawable/btn_shape"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@id/chargesOptionSpinner"/>
+
+</RelativeLayout>

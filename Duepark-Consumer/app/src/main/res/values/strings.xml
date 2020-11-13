@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Duepark-Consumer</string>
+    <string name="title_activity_maps">Map</string>
+    <!--<string name="base_url">https://be87e7f49d07.ngrok.io/duepark/</string>-->
+    <string name="base_url">https://duepark.azurewebsites.net/duepark/</string>
+<!--    <string name="base_url">https://duepark.000webhostapp.com/duepark/</string>-->
+</resources>

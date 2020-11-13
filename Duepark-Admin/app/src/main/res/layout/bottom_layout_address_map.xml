@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="true"
+    android:gravity="bottom"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="1dp"
+        app:cardElevation="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/locationPointer"
+                android:src="@drawable/ic_white_pointer"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/landmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/locationPointer"
+                android:fontFamily="@font/poppins"
+                android:padding="6dp"
+                android:text="Landmark"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/locationPointer"
+                android:padding="8dp"
+                android:text="Current Address"
+                android:textSize="14sp"
+                android:textAlignment="textStart"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:maxLines="4"
+                android:layout_alignParentStart="true"/>
+
+            <EditText
+                android:id="@+id/inputBlockNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Block No."
+                android:textSize="12sp"
+                android:layout_below="@id/address"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"/>
+
+            <EditText
+                android:id="@+id/inputLandmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Landmark"
+                android:textSize="12sp"
+                android:layout_below="@id/inputBlockNo"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"/>
+<!--            <Button
+            android:id="@+id/changeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change"
+            android:fontFamily="@font/roboto"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/btn_shape"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp" />-->
+
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save and Proceed"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_below="@id/inputLandmark"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/btn_shape"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

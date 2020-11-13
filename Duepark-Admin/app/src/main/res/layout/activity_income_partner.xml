@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailPartner.IncomePartnerActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:elevation="0dp">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="10dp"
+            android:layout_marginEnd="4dp"
+            />
+        <TextView
+            android:id="@+id/parking_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Income"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto"
+        android:padding="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:id="@+id/dateET"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:editable="false"
+        android:clickable="true"
+        android:focusable="false"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/toolbar"
+        android:layout_alignParentEnd="true" />
+
+    <RelativeLayout
+        android:id="@+id/totalEarningRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/income"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:elevation="1dp"
+        android:background="@drawable/oval_shape_light"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/totalEarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Earning"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="28dp"
+            android:paddingEnd="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/totalEarningTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingEnd="28dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="18dp"
+            android:fontFamily="@font/roboto"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/earningLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Earning by Location"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:fontFamily="@font/roboto"
+        android:padding="4dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/totalEarningRL"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_below="@id/earningLocation"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

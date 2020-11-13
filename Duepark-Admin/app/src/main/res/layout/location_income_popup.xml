@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:elevation="2dp">
+
+    <LinearLayout
+        android:id="@+id/headerLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:padding="4dp"
+            android:text="Name"
+            android:textColor="#747474"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Online"
+            android:textSize="18sp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#747474"
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            android:padding="4dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Cash"
+            android:textSize="18sp"
+            android:textColor="#747474"
+            android:fontFamily="@font/roboto"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_weight="1"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_below="@id/headerLL"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/recyclerView"
+        android:background="@drawable/shadow"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"/>
+
+    <LinearLayout
+        android:id="@+id/footerLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_below="@id/view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:textStyle="bold"
+            android:padding="4dp"
+            android:text="Total Earning"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/totalOnlinePaymentTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/roboto"
+            android:layout_weight="1"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/totalCashPaymentTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="@font/roboto"
+            android:layout_marginEnd="24dp"
+            android:layout_weight="1"
+            android:padding="4dp"/>
+    </LinearLayout>
+</RelativeLayout>

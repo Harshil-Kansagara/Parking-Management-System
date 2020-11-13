@@ -1,0 +1,137 @@
+package com.example.duepark_admin.DetailPartner.Location;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.duepark_admin.Adapter.LocationListAdapter;
+import com.example.duepark_admin.Model.LocationList;
+import com.example.duepark_admin.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class InactiveLocationListFragment extends Fragment {
+
+    private String base_url;
+    private static final String TAG = "InactiveLocationFrag";
+    private ArrayList<LocationList> locationLists;
+    private LocationListAdapter locationListAdapter;
+    private String parkingid;
+
+    public InactiveLocationListFragment(){}
+    public InactiveLocationListFragment(String parkingid){
+        this.parkingid = parkingid;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_inactive_location_list, container, false);
+
+        base_url = getResources().getString(R.string.base_url);
+
+        locationLists = new ArrayList<>();
+        locationListAdapter = new LocationListAdapter(locationLists, getContext(), getActivity());
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext(),
+                LinearLayoutManager.VERTICAL, false);
+        /*recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                DividerItemDecoration.VERTICAL));*/
+        recyclerView.setLayoutManager(mLinearLayoutManager);
+        recyclerView.setAdapter(locationListAdapter);
+
+        BackgroundTask backgroundTask = new BackgroundTask(getContext());
+        backgroundTask.execute();
+
+        return view;
+    }
+
+    class BackgroundTask extends AsyncTask<String, LocationList, String> {
+        private Context ctx;
+        private ProgressDialog progressDialog;
+
+        BackgroundTask(Context ctx){
+            this.ctx = ctx;
+            progressDialog = new ProgressDialog(this.ctx);
+        }
+
+        @Override
+        protected void onPreExecute() {
+            progressDialog.setMessage("Getting location list...");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String activeLocationList_url = base_url+"get_inactiveLocationList_Admin.php?ParkingId="+parkingid;
+            //String activeLocationList_url = "https://duepark.000webhostapp.com/consumer/get_inactiveLocationList.php?ParkingId="+employee.get(SessionManagerHelper.ParkingId)+"&EmployeeId="+employee.get(SessionManagerHelper.EmployeeId)+"&EmployeeRole="+employee.get(SessionManagerHelper.EmployeeRole);
+            try{
+                URL url = new URL(activeLocationList_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+
+                StringBuilder stringBuilder = new StringBuilder();
+                String line;
+
+                while((line = bufferedReader.readLine())!=null){
+                    stringBuilder.append(line+"\n");
+                }
+
+                httpURLConnection.disconnect();
+
+                String result = stringBuilder.toString().trim();
+
+                JSONObject jsonObject = new JSONObject(result);
+                JSONArray jsonArray = jsonObject.getJSONArray("server_response");
+                int count = 0;
+                locationLists.clear();
+                while(count<jsonArray.length()){
+                    JSONObject jo =jsonArray.getJSONObject(count);
+                    count++;
+                    LocationList locationList = new LocationList(jo.getString("id"), jo.getString("LocationName"),jo.getString("GeneratedLocationId"),
+                            jo.getString("LocationActiveState"), jo.getString("GeneratedParkingId"), jo.getString("ParkingAcronym"));
+                    publishProgress(locationList);
+                }
+                Log.d(TAG, "doInBackground: "+result);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(LocationList... values) {
+            locationLists.add(values[0]);
+            locationListAdapter.notifyDataSetChanged();
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            progressDialog.dismiss();
+        }
+    }
+}

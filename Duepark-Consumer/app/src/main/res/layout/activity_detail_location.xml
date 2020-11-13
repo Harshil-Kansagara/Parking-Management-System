@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Location.DetailLocationActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/locationProfileTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Location Profile"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/locationIdTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/roboto"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/oval_background"
+                android:padding="4dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rectangle_border"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/locationIdTV"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true">
+
+                <!--Location Name-->
+                <RelativeLayout
+                    android:id="@+id/locationNameRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/locationName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location Name:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/locationNameTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="visible"
+                        android:layout_below="@id/locationName"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/locationNameEditBtn"/>
+
+                    <EditText
+                        android:id="@+id/locationNameET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        android:layout_below="@id/locationName"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/locationNameEditBtn"/>
+
+                    <Button
+                        android:id="@+id/locationNameEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!--Location Type-->
+                <RelativeLayout
+                    android:id="@+id/locationTypeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/locationType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location Type:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/locationTypeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/locationType"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/locationTypeEditBtn"/>
+
+                    <Spinner
+                        android:id="@+id/locationTypeSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:padding="2dp"
+                        android:visibility="invisible"
+                        android:layout_below="@id/locationType"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/locationTypeEditBtn"/>
+
+                    <Button
+                        android:id="@+id/locationTypeEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Address -->
+                <RelativeLayout
+                    android:id="@+id/parkingAddressRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/locationAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/locationAddressTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/locationAddress"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/locationAddressEditBtn"/>
+
+                    <EditText
+                        android:id="@+id/locationAddressET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:layout_marginEnd="10dp"
+                        android:maxLines="10"
+                        android:visibility="invisible"
+                        android:layout_below="@id/locationAddress"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/locationAddressEditBtn"/>
+
+                    <Button
+                        android:id="@+id/locationAddressEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Open Time -->
+                <RelativeLayout
+                    android:id="@+id/openTimeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/openTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open Time:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/openTimeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/openTime"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/setOpenTimeEditBtn"/>
+
+                    <Button
+                        android:id="@+id/setOpenTimeEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Close Time -->
+                <RelativeLayout
+                    android:id="@+id/closeTimeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/closeTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Close Time:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/closeTimeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/closeTime"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/setCloseTimeEditBtn"/>
+
+                    <Button
+                        android:id="@+id/setCloseTimeEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+
+                <!-- Car Charges -->
+                <RelativeLayout
+                    android:id="@+id/carChargeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/carCharges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Car Charges:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/carChargesTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/carCharges"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/carChargesEditBtn"/>
+
+                    <Button
+                        android:id="@+id/carChargesEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Car Capacity -->
+                <RelativeLayout
+                    android:id="@+id/carCapacityRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/carCapacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Car Capacity:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/carCapacityTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/carCapacity"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/carCapacityEditBtn"/>
+
+                    <EditText
+                        android:id="@+id/carCapacityET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        android:layout_below="@id/carCapacity"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/carCapacityEditBtn"/>
+
+                    <Button
+                        android:id="@+id/carCapacityEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Bike Charges -->
+                <RelativeLayout
+                    android:id="@+id/bikeChargeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/bikeCharges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bike Charges:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/bikeChargesTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/bikeCharges"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/bikeChargesEditBtn"/>
+
+                    <Button
+                        android:id="@+id/bikeChargesEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Bike Capacity -->
+                <RelativeLayout
+                    android:id="@+id/bikeCapacityRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/bikeCapacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bike Capacity:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/bikeCapacityTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/bikeCapacity"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/bikeCapacityEditBtn"/>
+
+                    <EditText
+                        android:id="@+id/bikeCapacityET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        android:layout_below="@id/bikeCapacity"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/bikeCapacityEditBtn"/>
+
+                    <Button
+                        android:id="@+id/bikeCapacityEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!-- Pass Charges -->
+                <RelativeLayout
+                    android:id="@+id/passChargeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/passCharges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pass Charges:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/passChargesTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/passCharges"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/passChargesEditBtn"/>
+
+                    <LinearLayout
+                        android:id="@+id/carPassChargesLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/passCharges"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/carPassCharges"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Car Pass Charges Rs"
+                            android:fontFamily="@font/roboto"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:padding="2dp" />
+
+                        <EditText
+                            android:id="@+id/carPassChargesET"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Rate"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/bikePassChargesLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/carPassChargesLayout"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/bikePassCharges"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bike Pass Charges Rs"
+                            android:fontFamily="@font/roboto"
+                            android:textAlignment="textStart"
+                            android:textSize="18sp"
+                            android:padding="2dp" />
+
+                        <EditText
+                            android:id="@+id/bikePassChargesET"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Rate"
+                            android:inputType="number"/>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/passChargesEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape_light"
+                android:elevation="100dp"
+                android:fontFamily="@font/roboto"
+                android:padding="4dp"
+                android:text="Save"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="visible"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/linearLayout"/>
+
+            <Button
+                android:id="@+id/assignEmployeeBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape_light"
+                android:elevation="100dp"
+                android:fontFamily="@font/roboto"
+                android:padding="4dp"
+                android:text="Assigned Employee"
+                android:visibility="visible"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/saveBtn"/>
+
+            <Button
+                android:id="@+id/deactivateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape"
+                android:elevation="100dp"
+                android:fontFamily="@font/roboto"
+                android:padding="4dp"
+                android:text="Deactivate Location"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/assignEmployeeBtn"/>
+
+            <Button
+                android:id="@+id/activateBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape"
+                android:elevation="100dp"
+                android:fontFamily="@font/roboto"
+                android:padding="4dp"
+                android:text="Activate Location"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="invisible"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/linearLayout"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/duepark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Duepark"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+<androidx.core.widget.NestedScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_below="@id/toolbar">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Successfully"
+            android:textSize="34sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="24sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parking location added"
+            android:textSize="34sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/colorPrimary"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID:- "
+                android:textSize="34sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/locationId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AB0001A"
+                android:textSize="34sp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/colorPrimary" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parking Name  :  "
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+
+            <TextView
+                android:id="@+id/parkingName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XYZ"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location Name  :  "
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+
+            <TextView
+                android:id="@+id/locationName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XYZ"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address  :  "
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+
+            <TextView
+                android:id="@+id/locationAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="xyz"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location Type  :  "
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+
+            <TextView
+                android:id="@+id/locationType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date  :  "
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+
+            <TextView
+                android:id="@+id/locationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12-34-5678"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time :  "
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+
+            <TextView
+                android:id="@+id/locationTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01:00 PM"
+                android:textSize="20sp"
+                android:fontFamily="@font/roboto"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/homeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+</RelativeLayout>

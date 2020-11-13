@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+        <TextView
+            android:id="@+id/vehicleNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXXX-XX-1234"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:padding="4dp"/>
+
+        <TextView
+            android:id="@+id/vehicleFair"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs.00"
+            android:textSize="24sp"
+            android:padding="4dp"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/vehicleTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12:31 PM - 05:54 PM"
+            android:drawablePadding="4dp"
+            android:drawableStart="@drawable/ic_access_time"
+            android:textSize="16sp"
+            android:padding="4dp"
+            android:layout_below="@id/vehicleNumber"/>
+
+        <TextView
+            android:id="@+id/vehicleDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24-12-2019"
+            android:textSize="16sp"
+            android:padding="4dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/vehicleNumber"/>
+</RelativeLayout>

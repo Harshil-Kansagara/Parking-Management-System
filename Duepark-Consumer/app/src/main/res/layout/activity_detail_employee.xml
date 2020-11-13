@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Employee.DetailEmployeeActivity"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/employeeProfileTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Employee Profile"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/employeeIdTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textAllCaps="true"
+                android:fontFamily="@font/roboto"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/oval_background"
+                android:padding="4dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/rectangle_border"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/employeeIdTV"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true">
+
+                <!--Employee Role-->
+                <TextView
+                    android:id="@+id/employeeRoleTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="#076DAC"
+                    android:fontFamily="@font/poppins"
+                    android:paddingStart="20dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:background="@color/border"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"/>
+
+                <!-- Employee Profile Pic -->
+                <RelativeLayout
+                    android:id="@+id/employeeProfilePicRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/employeeProfilePic"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/userphoto"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginStart="18dp"
+                        android:visibility="visible"
+                        android:layout_gravity="start" />
+
+                    <Button
+                        android:id="@+id/updateBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:padding="12dp"
+                        android:background="@drawable/edit_btn_shape"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:textSize="18sp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!--Employee Name-->
+                <RelativeLayout
+                    android:id="@+id/employeeNameRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/employeeName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/employeeNameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@id/employeeName"/>
+
+                    <!--<Button
+                        android:id="@+id/employeeNameEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>-->
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!--Assign Location-->
+                <RelativeLayout
+                    android:id="@+id/assignLocationRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/assignLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assign Location:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/assignLocationTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="visible"
+                        android:layout_below="@id/assignLocation"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/assignLocationEditBtn"/>
+
+                    <Button
+                        android:id="@+id/assignLocationEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/assignLocationV"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone"/>
+
+                <!--Email Id-->
+                <RelativeLayout
+                    android:id="@+id/employeeEmailIdRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/employeeEmailId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email Id:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/employeeEmailIdTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/employeeEmailId"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/employeeEmailIdEditBtn"/>
+
+                    <EditText
+                        android:id="@+id/employeeEmailIdET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        android:layout_below="@id/employeeEmailId"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/employeeEmailIdEditBtn"/>
+
+                    <Button
+                        android:id="@+id/employeeEmailIdEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!--Mobile Number-->
+                <RelativeLayout
+                    android:id="@+id/employeeMobileNumberRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/employeeMobileNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Number:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/employeeMobileNumberTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/employeeMobileNumber"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/employeeMobileNumberEditBtn"/>
+
+                    <EditText
+                        android:id="@+id/employeeMobileNumberET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="invisible"
+                        android:layout_below="@id/employeeMobileNumber"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/employeeMobileNumberEditBtn"/>
+
+                    <Button
+                        android:id="@+id/employeeMobileNumberEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!--Password-->
+                <RelativeLayout
+                    android:id="@+id/employeePasswordRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/employeePassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Password:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/employeePasswordTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/employeePassword"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/employeePasswordEditBtn"/>
+
+                    <Button
+                        android:id="@+id/employeePasswordEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reset"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/passwordV"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone"/>
+
+                <!-- Address -->
+                <RelativeLayout
+                    android:id="@+id/employeeAdharNumberRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/employeeAdharNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adhaar Number:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/employeeAdharNumberTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textAlignment="textStart"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/employeeAdharNumber"
+                        android:layout_alignParentStart="true"/>
+
+                    <!--<Button
+                        android:id="@+id/employeeAdharNumberEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>-->
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <!--Vehicle Type-->
+                <RelativeLayout
+                    android:id="@+id/vehicleTypeRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp">
+
+                    <TextView
+                        android:id="@+id/vehicleType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vehicle Type:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"/>
+
+                    <TextView
+                        android:id="@+id/vehicleTypeTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:padding="2dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_below="@id/vehicleType"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/vehicleTypeEditBtn"/>
+
+                    <RadioGroup
+                        android:id="@+id/vehicleRadioGrp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_below="@id/vehicleType"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/vehicleTypeEditBtn"
+                        android:visibility="gone">
+
+                        <RadioButton
+                            android:id="@+id/carRadioBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="0dp"
+                            android:text="Car"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto"/>
+
+                        <RadioButton
+                            android:id="@+id/bikeRadioBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="0dp"
+                            android:text="Bike"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto"/>
+
+                        <RadioButton
+                            android:id="@+id/bothRadioBtn"
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="0dp"
+                            android:text="Both"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/roboto"/>
+                    </RadioGroup>
+
+                    <Button
+                        android:id="@+id/vehicleTypeEditBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Edit"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/vehicleTypeV"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/employeeActivationStateRL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="18dp">
+
+                   <!-- <TextView
+                        android:id="@+id/employeeActivationState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Employee Activation State:"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto"
+                        android:textStyle="bold"
+                        android:padding="2dp"
+                        android:layout_alignParentStart="true"/>-->
+
+                    <Button
+                        android:id="@+id/activationStateBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:textAllCaps="false"
+                        android:background="@drawable/edit_btn_shape"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentStart="true"/>
+
+                </RelativeLayout>
+
+               <!-- <View
+                    android:id="@+id/employeeActivationStateV"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/border"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone"
+                    android:layout_marginBottom="18dp"/>-->
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:backgroundTint="@color/colorPrimary"
+        android:foregroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>

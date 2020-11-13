@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/partner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Add Partner"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/parkingName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="10dp"
+                    android:hint="Parking Name"
+                    android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/ownerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="10dp"
+                android:hint="Owner Name"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/mobileNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Mobile Number"
+                android:maxLength="10"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="10dp"
+                android:hint="Phone Number (Optional)"
+                android:inputType="number"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/emailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="10dp"
+                android:hint="Email Address"
+                android:textSize="18sp"/>
+
+            <Spinner
+                android:id="@+id/type_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="10dp" />
+
+            <TextView
+                android:id="@+id/parkingAddress"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Parking Address"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:maxLines="3"
+                android:padding="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:textSize="16sp"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"/>
+
+            <TextView
+                android:id="@+id/acronym"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Acronym"
+                android:textSize="16sp"
+                android:maxLines="3"
+                android:paddingStart="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"/>
+
+            <Button
+                android:id="@+id/addAddressBtn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Add Address"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
+                android:layout_gravity="end"
+                android:background="@drawable/btn_shape"/>
+
+            <Button
+                android:id="@+id/addParkingBtn"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Add Parking"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
+                android:background="@drawable/btn_shape"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

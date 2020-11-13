@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imgLocationPinUp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/marker"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/bottom_layout_address_map"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/ imgLocationPinUp"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/marker"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="bottom"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/locationPointer"
+                android:src="@drawable/ic_white_pointer"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:padding="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/currentLocationArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/locationPointer"
+                android:fontFamily="@font/poppins"
+                android:padding="6dp"
+                android:text="Landmark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/locationPointer"
+                android:padding="8dp"
+                android:text="Current Address"
+                android:textSize="14sp"
+                android:layout_marginStart="16dp"
+                android:maxLines="4"
+                android:layout_alignParentStart="true"/>
+
+          &lt;!&ndash;  <Button
+                android:id="@+id/changeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change"
+                android:fontFamily="@font/roboto"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_shape"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp" />&ndash;&gt;
+
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save and Proceed"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto"
+                android:textSize="16sp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/btn_shape"/>
+
+        </RelativeLayout>-->

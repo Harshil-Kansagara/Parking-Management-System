@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:elevation="2dp"
+    tools:context=".Valet.Menu.ValetIncomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Income"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/dateRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:elevation="1dp"
+        android:background="@drawable/oval_shape_light"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Date"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="28dp"
+            android:paddingEnd="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:paddingEnd="28dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="18dp"
+            android:fontFamily="@font/roboto"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/totalEarningRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateRL"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:elevation="1dp"
+        android:background="@drawable/oval_shape_light">
+
+        <TextView
+            android:id="@+id/totalEarning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Earning"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="28dp"
+            android:paddingEnd="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/totalEarningTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingEnd="28dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingStart="18dp"
+            android:fontFamily="@font/roboto"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cash Earning"
+        android:textSize="18sp"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:padding="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/totalEarningRL"/>
+
+    <TextView
+        android:id="@+id/totalCashEarningTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:padding="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/totalEarningRL"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Online Earning"
+        android:textSize="18sp"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:padding="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/totalCashEarningTV"/>
+
+    <TextView
+        android:id="@+id/totalOnlineEarningTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:padding="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/totalCashEarningTV"/>
+
+    <Button
+        android:id="@+id/downloadHistoryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_shape"
+        android:elevation="100dp"
+        android:fontFamily="@font/roboto"
+        android:padding="4dp"
+        android:text="Download History"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParkedVehicle.ActivatedParkedVehicleActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/employeeHiredTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:gravity="center_vertical"
+            android:padding="4dp"
+            android:text="Activated Parked Vehicle"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/vehicleDataTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="180dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="12dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="12dp" />
+
+            <!-- Full Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Full Name                 :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/passUserNameTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/passUserNameTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/passUserNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="textStart"
+                android:padding="2dp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/vehicleDataTV"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+
+            <!-- Mobile Number -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Mobile Number        :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/passUserMobileNumberTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/passUserMobileNumberTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/passUserMobileNumberTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/roboto"
+                android:padding="2dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/passUserNameTV"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+
+            <!-- Parked Date -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Parked Date             :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/parkedDateTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/parkedDateTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/parkedDateTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/passUserMobileNumberTV"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+
+            <!-- Parked Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Parked Time             :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/parkedTimeTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/parkedTimeTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/parkedTimeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="textStart"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/parkedDateTV"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+
+            <!-- Released Time -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Released Time         :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/releasedTimeTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/releasedTimeTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/releasedTimeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="N/A"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:padding="2dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/parkedTimeTV"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+
+            <!-- Parked By -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Parked By                 :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/parkedByTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/parkedByTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/parkedByTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/releasedTimeTV"/>
+
+            <!-- Released By -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Released By             :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/releasedByTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/releasedByTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/releasedByTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:text="N/A"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:padding="2dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/parkedByTV"/>
+
+            <!-- Monthly Pass -->
+            <TextView
+                android:id="@+id/monthlyPass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="@font/roboto"
+                android:text="Monthly Pass        :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintBottom_toBottomOf="@id/monthlyPassIdTV"
+                app:layout_constraintTop_toTopOf="@+id/monthlyPassIdTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/monthlyPassIdTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/releasedByTV"
+                android:visibility="gone"/>
+
+            <!-- Paid Amount -->
+            <TextView
+                android:id="@+id/paidAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Paid Amount            :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintBottom_toBottomOf="@id/paidAmountTV"
+                app:layout_constraintTop_toTopOf="@+id/paidAmountTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/paidAmountTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/releasedByTV"/>
+
+            <!-- Pending Amount -->
+            <TextView
+                android:id="@+id/pendingAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Pending Amount      :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                app:layout_constraintBottom_toBottomOf="@id/pendingAmountTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/pendingAmountTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/pendingAmountTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/paidAmountTV"/>
+
+            <!-- Payment Type -->
+            <TextView
+                android:id="@+id/paymentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Payment Type          :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/paymentTypeTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/paymentTypeTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/paymentTypeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:visibility="visible"
+                android:fontFamily="@font/roboto"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/pendingAmountTV"/>
+
+            <!-- Pay Later -->
+            <TextView
+                android:id="@+id/payLater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Pay Later                  :"
+                android:textSize="18sp"
+                android:padding="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/paymentTypeTV"
+                app:layout_constraintStart_toEndOf="@id/startGuideline"
+                app:layout_constraintTop_toTopOf="@+id/paymentTypeTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline"/>
+
+            <TextView
+                android:id="@+id/payLaterTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:padding="2dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="14dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@id/pendingAmountTV"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/verifyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_check"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
